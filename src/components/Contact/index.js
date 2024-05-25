@@ -1,10 +1,10 @@
 import React from 'react'
-import Logo from '../Home/Logo'
+import './index.scss'
 
 function Contact() {
     return (
-        <div>
-            <Logo />
+        <div className='container contact-page'>
+            <img className='not-found' src={require('../../assets/images/404NotFound.png')} />
         </div>
     )
 }

@@ -43,6 +43,20 @@ const Home = () => {
                 })
             }
         }
+        const el = document.getElementsByClassName('myImg');
+
+        if (el.length !== 0) {
+            //console.log(elements);
+            for (let i = 0; i < el.length; i++) {
+                el[i].addEventListener('animationend', function (e) {
+                    el[i].classList.remove('animated-img');
+                });
+
+                el[i].addEventListener('mouseover', function (e) {
+                    el[i].classList.add('animated-img')
+                })
+            }
+        }
     }, 500);
 
     //use Gsap
@@ -81,6 +95,7 @@ const Home = () => {
             ).to(
                 text.current, {
                 opacity: 0,
+                display: 'none'
             },
                 'start'
             ).to(
@@ -89,7 +104,8 @@ const Home = () => {
             }, "start"
             ).to(
                 ".cloud", {
-                opacity: 0
+                opacity: 0,
+                display: 'none'
             }, "start"
             )
             .to(
@@ -104,9 +120,11 @@ const Home = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            toast("You can scroll to see more detail", {
+            toast.dismiss()
+            toast("Did you know that you can scroll it?", {
                 position: 'bottom-right',
-                type: 'info',
+                closeOnClick: true,
+                hideProgressBar: true,
                 theme: 'dark'
             })
 
@@ -131,13 +149,19 @@ const Home = () => {
 
                 </h1>
                 <h2>Backend developer</h2>
-                <Link to="/contact" className='contact-button'>CONTACT ME</Link>
+                {/* <Link to="/contact" className='contact-button'>CONTACT ME</Link> */}
 
             </div>
             <div className='cloudBoard' ref={cloudBoard}>
                 <div className='cloud'><CloudTag /></div>
                 <div className='cardImage'>
-                    <img src={require('../../assets/images/HuynhHoangPhuong-CE161062.JPG')} alt='Phuong' className='myImg' />
+                    {/* <img src={require('../../assets/images/HuynhHoangPhuong-CE161062.JPG')} alt='Phuong' className='myImg' /> */}
+                    <img src={require('../../assets/images/Node.js.png')} alt='nodejs' className='myImg' />
+                    <img src={require('../../assets/images/React.png')} alt='react' className='myImg' />
+                    <img src={require('../../assets/images/Dotnet.png')} alt='react' className='myImg' />
+                    <div className='link-img'>
+                        <a className='uwu' href='https://github.com/SAWARATSUKI/KawaiiLogos' target='_blank' rel="noreferrer">Even though it's not related to my portfolio, it's cute =))<br></br>All pictures are here</a>
+                    </div>
                 </div>
             </div>
             <ToastContainer />

@@ -16,10 +16,10 @@ const CloudTag = () => {
             'C#',
             'Java',
             'Jquery',
-            'ES6',
-            'GIT',
             'GITHUB',
-            'SQL'
+            'SQL',
+            'NODEJS',
+            'MONGODB'
         ];
 
         const options = {

@@ -51,15 +51,6 @@
       animation: fadeIn 1s 1.7s backwards;
       opacity: 0.6;
     }
-
-    img {
-      margin-left: 20px;
-      opacity: 0;
-      width: 32px;
-      height: auto;
-      animation: rotateIn 1s linear both;
-      animation-delay: 1.4s;
-    }
   }
 
   h2 {
@@ -123,8 +114,21 @@
     font-size: 20px;
   }
   .myImg {
-    width: 300px;
+    width: 500px;
     height: auto;
+    &:hover {
+      animation: hinge 1.8s forwards;
+    }
+  }
+
+  .link-img {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 14px;
+    .uwu {
+      color: var(--yellow-color);
+    }
   }
 
   .cloud {
@@ -134,4 +138,8 @@
 
 .animated {
   animation: rubberBand 1s;
+}
+
+.animated-img {
+  animation: hinge 1.8s;
 }

@@ -7,13 +7,14 @@ const Project = () => {
     const sliderContent = [
         "PlantMed (Web/Mobile)",
         "Portfolio",
+        "Shoes Store"
     ]
 
 
     useGSAP(() => {
         let currentImageIndex = 2
         let currentContentIndex = 1
-        const totalImages = 2
+        const totalImages = 3
         let isAnimating = false
 
         gsap.to(".slider-next-img", {
