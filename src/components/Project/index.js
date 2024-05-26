@@ -3,6 +3,7 @@ import './index.scss'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { splitTextToSpan } from '../../untils'
+
 const Project = () => {
     const sliderContent = [
         "PlantMed (Web/Mobile)",
@@ -10,6 +11,12 @@ const Project = () => {
         "Shoes Store"
     ]
 
+    const sliderDescriptions = [
+        "<span>Description: </span>A comprehensive platform for users to search for medicinal plants with web and mobile interfaces.<br/><span>Technologies: </span>We used Tensorflow technology for image detection, Python with FastAPI, C# with .NET framework for the backend, MS SQL and Firebase to manage the database, and finally JavaScript with ReactJS and React-Native framework for mobile and web interfaces.<br/><span>Responsibilities: </span>Build the base and code the entire mobile interface.<br/>Build interface and write API for blog management and comment blog functions.<br/>Build a chat system between users and experts.<br/>Fix bugs for the team.",
+        `<span>Team size: </span>1<br/><span>Description: </span>A showcase of my projects and skills during my studies.<br /><span>Technologies: </span>Using JavaScript with ReactJS to build web interfaces, also use SASS helps write CSS faster and with a clearer structure..<br/><span>Responsibilities: </span>Build the base and code the entire web interface.<br />`,
+        `<span>Team size: </span>1<br /><span>Description: </span>A project for me to practice Nodejs. This is an e-commerce platform dedicated to selling a variety of shoes.<br/><span>Technologies: </span>Using NodeJs for the backend, MongoDB to manage the database, and finally JavaScript with ReactJS framework web interfaces.<br/><span>Responsibilities: </span>Build the base and code the entire web interface.<br />
+Most functions are similar to other e-commerce websites such as wishlist, purchasing, search, payment, manage profile, etc. (the admin management will update soon).`
+    ]
 
     useGSAP(() => {
         let currentImageIndex = 2
@@ -38,13 +45,18 @@ const Project = () => {
             isAnimating = true
 
             splitTextToSpan(".slider-content-active h1")
-
             gsap.to(".slider-content-active h1 span", {
                 top: "-175px",
                 stagger: 0.05,
                 ease: "power3.out",
                 duration: 0.5,
+            })
 
+            gsap.to(".slider-content-active p", {
+                top: "-175px",
+                opacity: 0,
+                ease: "power3.out",
+                duration: 0.5,
             })
 
             gsap.to(".slider-active img", {
@@ -55,7 +67,12 @@ const Project = () => {
 
             splitTextToSpan(".slider-content-next h1")
             gsap.set(".slider-content-next h1 span", {
-                top: "200px"
+                top: "300px"
+            })
+
+            gsap.set(".slider-content-next p", {
+                top: "300px",
+                opacity: 0
             })
 
             gsap.to(".slider-content-next", {
@@ -75,17 +92,22 @@ const Project = () => {
                             nextContent.classList.add("slider-content-active")
                             nextContent.style.top = "0"
 
+                            gsap.to(nextContent.querySelector("p"), {
+                                top: 0,
+                                opacity: 1,
+                                ease: "power3.out",
+                                duration: 0.5,
+                            })
+
                             currentContentIndex = (currentContentIndex + 1) % totalImages
                             const nextContentText = sliderContent[currentContentIndex]
-                            const newContentHTML = `<div class="slider-content-next" style="top: 200px;"><h1>${nextContentText}</h1></div>`
+                            const nextContentDescription = sliderDescriptions[currentContentIndex]
+                            const newContentHTML = `<div class="slider-content-next" style="top: 300px;"><h1>${nextContentText}</h1><p>${nextContentDescription}</p></div>`
                             document.querySelector(".slider-content").insertAdjacentHTML("beforeend", newContentHTML)
                         }
                     })
                 }
             })
-
-
-
 
             currentImageIndex = (currentImageIndex % totalImages) + 1
             const imagePath = require(`../../assets/images/project${currentImageIndex}.png`);
@@ -106,11 +128,10 @@ const Project = () => {
                 delay: 1
             })
 
-
             const slideNextImg = document.querySelector(".slider-next-img")
             gsap.to(slideNextImg, {
                 width: "100vw",
-                height: "100vh",
+                height: "60vh",
                 duration: 1,
                 ease: "power3.out",
                 onComplete: () => {
@@ -137,7 +158,7 @@ const Project = () => {
 
     return (
         <div className='project-page'>
-            <button className='btn-more'>Click to se more</button>
+            <button className='btn-more'>View detail of next project</button>
             <div className='slider'>
                 <div className='slider-active'>
                     <img src={require('../../assets/images/project1.png')} alt='project' />
@@ -151,13 +172,19 @@ const Project = () => {
             <div className='slider-content'>
                 <div className='slider-content-active'>
                     <h1>PlantMed (Web/Mobile)</h1>
+                    <p><span>Team size: </span>5<br /><span>Description: </span>A comprehensive platform for users to search for medicinal plants with web and mobile interfaces.<br /><span>Technologies: </span>We used Tensorflow technology for image detection, Python with FastAPI, C# with .NET framework for the backend, MS SQL and Firebase to manage the database, and finally JavaScript with ReactJS and React-Native framework for mobile and web interfaces.<br /><span>Responsibilities: </span>Build the base and code the entire mobile interface.<br />
+                        Build interface and write API for blog management and comment blog functions.<br />
+                        Build a chat system between users and experts.<br />
+                        Fix bugs for the team.
+                    </p>
                 </div>
                 <div className='slider-content-next'>
                     <h1>Portfolio</h1>
+                    <p><span>Team size: </span>1<br /><span>Description: </span>A showcase of my projects and skills during my studies.<br /><span>Technologies: </span>Using JavaScript with ReactJS to build web interfaces, also use SASS helps write CSS faster and with a clearer structure.<br /><span>Responsibilities: </span>Build the base and code the entire web interface.<br /></p>
                 </div>
             </div>
-        </div>
 
+        </div>
     )
 }
 

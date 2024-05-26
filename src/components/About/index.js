@@ -48,7 +48,7 @@ export default function About() {
             const ctx = canvas.getContext('2d');
 
             const dots = [];
-            const arrayColor = ['#240750', '#344C64', '#577B8D', '#57A6A1', '#FFC96F'];
+            const arrayColor = ['#240750', '#344C64'];
             for (let index = 0; index < dotLength; index++) {
                 dots.push({
                     x: Math.floor(Math.random() * canvas.width),
@@ -110,7 +110,7 @@ export default function About() {
                 <p>I am quite good at debugging code as well as absorbing new knowledge quickly. I also have experience in projects <span>Web App/Restful API</span>, database <span>Mysql</span>, and <span>MongoDB</span>. Currently, my main languages are <span>C#</span> and <span>JS</span>.</p>
 
                 <p>My short-term goal is to be a part of the Backend team, to build a platform that can showcase my skills and grow my career. I am always enthusiastic to develop myself along with the organization.</p>
-                <p>My long-term goal is to become a <span>Backend Developer</span> (using many different languages for deployment).</p>
+                <p>My long-term goal is to become a <span>Backend Developer</span>.</p>
             </div>
             <div className='cube'>
                 <div className='cube-spinner'>
