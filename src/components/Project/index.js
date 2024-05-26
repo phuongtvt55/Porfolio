@@ -129,7 +129,7 @@ const Project = () => {
                     }
                     setTimeout(() => {
                         isAnimating = false
-                    }, 1300)
+                    }, 1500)
                 }
             })
         })

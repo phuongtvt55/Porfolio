@@ -4,7 +4,7 @@ import './index.scss'
 function Contact() {
     return (
         <div className='container contact-page'>
-            <img className='not-found' src={require('../../assets/images/404NotFound.png')} />
+            <img alt='notfound' className='not-found' src={require('../../assets/images/404NotFound.png')} />
         </div>
     )
 }

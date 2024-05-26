@@ -37,7 +37,7 @@ const CloudTag = () => {
     }, [])
 
     let root = document.querySelector('.tagcloud')
-    console.log(root)
+    //console.log(root)
     if (root) {
         root.addEventListener('click', function clickEventHandler(e) {
             if (e.target.className === 'tagcloud--item') {
