@@ -1,3 +1,4 @@
+@import "../../assets/styles/mixins.scss";
 :root {
   --yellow-color: #ffd700;
 }
@@ -13,6 +14,7 @@
   overflow-x: hidden;
   .text {
     padding-left: 100px;
+
     position: fixed;
     z-index: 1;
     width: 45%;
@@ -23,12 +25,32 @@
     display: flex;
   }
 
+  .cloud {
+    @include mobile {
+      display: none !important;
+    }
+    @include middle {
+      display: none !important;
+    }
+  }
+
   h1 {
     color: #fff;
     font-size: 60px;
     font-family: "Coolvetica";
     font-weight: 400;
-
+    @include mobile {
+      width: 250px;
+      font-size: 26px;
+    }
+    @include middle {
+      width: 325px;
+      font-size: 40px;
+    }
+    @include tablet {
+      width: 400px;
+      font-size: 50px;
+    }
     &:before {
       content: "<h1>";
       font-family: "La Belle Aurore", cursive;
@@ -113,11 +135,32 @@
     font-weight: bold;
     font-size: 20px;
   }
-  .myImg {
-    width: 500px;
-    height: auto;
-    &:hover {
-      animation: hinge 1.8s forwards;
+  .imgUwu {
+    display: flex;
+    @include mobile {
+      flex-direction: column;
+    }
+    @include middle {
+      flex-direction: column;
+    }
+    @include tablet {
+      flex-direction: column;
+    }
+    .myImg {
+      width: 500px;
+      height: auto;
+      &:hover {
+        animation: hinge 1.8s forwards;
+      }
+      @include tablet {
+        width: 350px;
+      }
+      @include middle {
+        width: 250px;
+      }
+      @include mobile {
+        width: 200px;
+      }
     }
   }
 
@@ -128,6 +171,9 @@
     font-size: 14px;
     .uwu {
       color: #003285;
+    }
+    @include mobile {
+      font-size: 10px;
     }
   }
 

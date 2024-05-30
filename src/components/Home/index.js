@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 import AnimatedLetters from '../AnimatedLetters';
 import './index.scss';
 import gsap from 'gsap'
@@ -156,9 +155,11 @@ const Home = () => {
                 <div className='cloud'><CloudTag /></div>
                 <div className='cardImage'>
                     {/* <img src={require('../../assets/images/HuynhHoangPhuong-CE161062.JPG')} alt='Phuong' className='myImg' /> */}
-                    <img src={require('../../assets/images/Node.js.png')} alt='nodejs' className='myImg' />
-                    <img src={require('../../assets/images/React.png')} alt='react' className='myImg' />
-                    <img src={require('../../assets/images/Dotnet.png')} alt='react' className='myImg' />
+                    <div className='imgUwu'>
+                        <img src={require('../../assets/images/Node.js.png')} alt='nodejs' className='myImg' />
+                        <img src={require('../../assets/images/React.png')} alt='react' className='myImg' />
+                        <img src={require('../../assets/images/Dotnet.png')} alt='react' className='myImg' />
+                    </div>
                     <div className='link-img'>
                         <a className='uwu' href='https://github.com/SAWARATSUKI/KawaiiLogos' target='_blank' rel="noreferrer">Even though it's not related to my portfolio, it's cute =))<br></br>All pictures are here</a>
                     </div>
