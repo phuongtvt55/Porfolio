@@ -13,7 +13,7 @@ const Home = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
     let nameText = " Phuong";
     const strName = nameText.split("");
-    let nameJob = "Backend developer";
+    let nameJob = "Fresher Software Engineer";
     const strJob = nameJob.split("");
 
     useEffect(() => {
@@ -147,7 +147,7 @@ const Home = () => {
                     <AnimatedLetters letterClass={letterClass} strArray={strJob} idx={22} />
 
                 </h1>
-                <h2>Backend developer</h2>
+                <h2>Frontend developer / Backend developer</h2>
                 {/* <Link to="/contact" className='contact-button'>CONTACT ME</Link> */}
 
             </div>

@@ -83,7 +83,9 @@
     height: 250px;
     overflow: hidden;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-
+    @include mobile {
+      width: 73%;
+    }
     .slider-content-active {
       position: absolute;
       top: 0;

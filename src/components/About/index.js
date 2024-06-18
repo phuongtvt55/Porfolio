@@ -107,10 +107,10 @@ export default function About() {
                     <AnimatedLetters letterClass={letterClass} strArray={strSplit} idx={15} />
                 </h1>
                 <p>My name is Phuong and I am from Ca Mau. I have recently completed my post-graduation in <span>Software Engineering</span> from FPT University Can Tho.</p>
-                <p>I am quite good at debugging code as well as absorbing new knowledge quickly. I also have experience in projects <span>Web App/Restful API</span>, database <span>Mysql</span>, and <span>MongoDB</span>. Currently, my main languages are <span>C#</span> and <span>JS</span>.</p>
+                <p>I am quite good at debugging code as well as absorbing new knowledge quickly. I also have experience in projects <span>Web App/Restful API</span>, database <span>Mysql</span>, and <span>MongoDB</span>. Currently, my main languages are <span>C#</span> and <span>JavaScript</span>.</p>
 
-                <p>My short-term goal is to be a part of the Backend team, to build a platform that can showcase my skills and grow my career. I am always enthusiastic to develop myself along with the organization.</p>
-                <p>My long-term goal is to become a <span>Backend Developer</span>.</p>
+                <p>My short-term goal is to be a part of the <span>Backend</span> or <span>Frontend</span> team, to build a platform that can showcase my skills and grow my career. I am always enthusiastic to develop myself along with the organization.</p>
+                <p>My long-term goal is to become a <span>Fullstack Developer</span>.</p>
             </div>
             <div className='cube'>
                 <div className='cube-spinner'>
